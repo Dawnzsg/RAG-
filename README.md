@@ -12,6 +12,7 @@ RAG是结合“检索外部知识库”和“大模型生成”的技术，解�
 | `train_lora.py` | LoRA轻量化训练模块：基于LoRA技术对大模型做轻量化微调（仅训练少量参数），降低硬件成本，同时针对RAG场景优化模型生成逻辑。 |
 | `inference.py` | 基础推理模块：加载微调后的基础模型，实现RAG流程的推理（如接收用户查询→检索知识库→结合知识库内容生成回答）。 |
 | `inference_lora.py` | LoRA推理模块：加载LoRA微调后的模型（或基础模型+LoRA权重），执行RAG推理，是轻量化微调后的核心推理入口。 |
+数据集来源：https://modelscope.cn/datasets/krisfu/delicate_medical_r1_data
 
 ### 3. 项目整体流程（推测）
 1. 通过`data.py`处理RAG专用数据集（如“问题-知识库片段-标准答案”格式的样本）；
